@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'dotnet build -c release -f netcoreapp2.0 -o app'
+                sh 'dotnet publish src/Service/Service.csproj -c release -f netcoreapp2.0 -o ../../app'
             }
         }
         stage('Publish') 
