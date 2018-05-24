@@ -15,7 +15,7 @@ pipeline {
             {
                 script
                 {
-                    docker.withRegistry('https://eu.gcr.io', 'gcr:fantasyfootball)'
+                    docker.withRegistry('https://eu.gcr.io', 'gcr:fantasyfootball)')
                     {
                         docker.build('fantasyfootball-204922/team-validator')
                         docker.image('fantasyfootball-204922/team-validator').push("${BUILD_NUMBER}")
