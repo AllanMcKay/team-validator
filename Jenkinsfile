@@ -27,13 +27,12 @@ pipeline {
         stage('Deploy')
         {
             steps{
-                kubernetesDeploy(kubeconfigId: 'kubeconfig-production',               // REQUIRED
-
+                kubernetesDeploy(
+                    kubeconfigId: 'kubeconfig-production',               // REQUIRED
                     configs: 'replicationcontroller.yaml', // REQUIRED
                     enableConfigSubstitution: false,
-            
-                    //secretNamespace: '<secret-namespace>',
-                    //secretName: '<secret-name>',
+                    secretNamespace: 'deployment',
+                    secretName: 'regcred',
                     dockerCredentials: [
                             [credentialsId: 'gcr:fantasyfootball', url: 'https://eu.gcr.io'],
                     ]
