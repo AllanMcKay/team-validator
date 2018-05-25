@@ -26,16 +26,19 @@ pipeline {
         }
         stage('Deploy')
         {
-            kubernetesDeploy(kubeconfigId: 'kubeconfig-production',               // REQUIRED
+            steps{
+                kubernetesDeploy(kubeconfigId: 'kubeconfig-production',               // REQUIRED
 
-                 configs: 'replicationcontroller.yaml', // REQUIRED
-                 enableConfigSubstitution: false,
-        
-                 //secretNamespace: '<secret-namespace>',
-                 //secretName: '<secret-name>',
-                 dockerCredentials: [
-                        [credentialsId: 'gcr:fantasyfootball', url: 'https://eu.gcr.io'],
-                 ]
+                    configs: 'replicationcontroller.yaml', // REQUIRED
+                    enableConfigSubstitution: false,
+            
+                    //secretNamespace: '<secret-namespace>',
+                    //secretName: '<secret-name>',
+                    dockerCredentials: [
+                            [credentialsId: 'gcr:fantasyfootball', url: 'https://eu.gcr.io'],
+                    ]
+                )
+            }
 )
         }
     }
