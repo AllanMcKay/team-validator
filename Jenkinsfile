@@ -31,11 +31,11 @@ pipeline {
                     kubeconfigId: 'kubeconfig-production',               // REQUIRED
                     configs: 'replicationcontroller.yaml', // REQUIRED
                     enableConfigSubstitution: false,
-                    secretNamespace: 'deployment',
-                    secretName: 'regcred',
-                    dockerCredentials: [
-                            [credentialsId: 'gcr:fantasyfootball', url: 'https://eu.gcr.io'],
-                    ]
+                    //secretNamespace: 'deployment',
+                    //secretName: 'regcred',
+                    //dockerCredentials: [
+                     //       [credentialsId: 'gcr:fantasyfootball', url: 'https://eu.gcr.io'],
+                    //]
                 )
             }
         }
