@@ -36,4 +36,4 @@ spec:
           # More details on the container ports here,
           # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_containerport
           # The port exposed by the container
-        - containerPort: 8080
+        - containerPort: 80
