@@ -21,7 +21,7 @@ spec:
         # Uncomment this line to use the public docker hub image
         #image: omerio/graphviz-server
         # my own private Container Registry image
-        image: eu.gcr.io/fantasyfootball-204922/team-validator:$BUILD_NUMBER
+        image: eu.gcr.io/fantasyfootball-204922/team-validator:${BUILD_NUMBER}
         # Arguments to the image entrypoint, more details here:
         # http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_container
         #args: ["80"]
