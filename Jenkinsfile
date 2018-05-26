@@ -30,7 +30,7 @@ pipeline {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig-production',               // REQUIRED
                     configs: 'replicationcontroller.yaml', // REQUIRED
-                    enableConfigSubstitution: false,
+                    enableConfigSubstitution: true,
                     //secretNamespace: 'deployment',
                     //secretName: 'regcred',
                     //dockerCredentials: [
